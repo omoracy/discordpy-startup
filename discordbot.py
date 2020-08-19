@@ -38,11 +38,6 @@ async def on_member_join(member):
     await message.channel.send('よろしくね')
 
 
-# ボイスチャンネル出入に実行： on_voice_state_update(member, before, after)
-@bot.event
-async def on_voice_state_update(member)
-    await message.channel.send('ようこそ')
-    await message.channel.send('お越しくださいました')
 
 
 bot.run(token)
