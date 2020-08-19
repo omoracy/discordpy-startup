@@ -13,13 +13,12 @@ async def on_command_error(ctx, error):
     await ctx.send(error_msg)
 
 
-
-@bot.command(pass_context=True)
-@bot.event
-async def on_member_join(ctx, member):
-    print(f'{member} has joined a server.')
-    await ctx.send(f"Hello {member}!")
-    await ctx.member.send(f"Welcome to the server!")
+    
+@commands.Cog.listener()
+    async def on_member_join(self, member):
+        ment = member.mention
+        await self.client.get_channel(channel id).send(f"{ment} has joined the server.")
+        print(f"{member} has joined the server.")
 
 
 bot.run(token)
