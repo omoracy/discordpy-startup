@@ -34,8 +34,6 @@ async def on_message(message):
 @bot.event
 async def on_member_join(member):
     await message.channel.send('ようこそ')
-    await message.channel.send('お越しくださいました')
-    await message.channel.send('よろしくね')
 
 
 
