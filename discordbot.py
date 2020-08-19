@@ -33,7 +33,7 @@ async def on_message(message):
 # 新規メンバー参加時に実行されるイベントハンドラ
 @bot.event
 async def on_member_join(member):
-    await message.channel.send('ようこそ')
+    await message.channel.send("ようこそ")
 
 
 
