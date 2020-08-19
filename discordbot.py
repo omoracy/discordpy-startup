@@ -13,12 +13,19 @@ async def on_command_error(ctx, error):
     await ctx.send(error_msg)
 
 
-    
-@commands.Cog.listener()
-    async def on_member_join(self, member):
-        ment = member.mention
-        await self.client.get_channel(channel id).send(f"{ment} has joined the server.")
-        print(f"{member} has joined the server.")
+@bot.event
+async def on_member_join():
+    await message.channel.send('きたーん')
 
+
+# メッセージ受信時に動作する処理
+@bot.event
+async def on_message(message):
+    # メッセージ送信者がBotだった場合は無視する
+    if message.author.bot:
+        return
+    # 「/neko」と発言したら「にゃーん」が返る処理
+    if message.content == '/neko':
+        await message.channel.send('にゃーん')
 
 bot.run(token)
