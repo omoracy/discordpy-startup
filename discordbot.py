@@ -14,6 +14,11 @@ async def on_command_error(ctx, error):
 
 
 @bot.event
+async def on_ready():
+    print('We have logged in as {0.user}'.format(bot))
+
+
+@bot.event
 async def on_member_join():
     await message.channel.send('きたーん')
 
