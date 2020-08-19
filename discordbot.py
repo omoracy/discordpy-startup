@@ -29,7 +29,12 @@ async def on_message(message):
         await message.channel.send('にゃーん')
 
 
-
+@bot.command(pass_context=True)
+@bot.event
+async def on_member_join(ctx, member):
+    print(f'{member} has joined a server.')
+    await ctx.send(f"Hello {member}!")
+    await ctx.member.send(f"Welcome to the server!")
 
 
 bot.run(token)
