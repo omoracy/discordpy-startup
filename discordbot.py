@@ -19,12 +19,12 @@ async def on_ready():
 
 
 @bot.event
-async def on_member_join(Member):
+discord.on_member_join(member):
     await message.channel.send('きたーん')
 
 
 @bot.event
-async def on_member_update():
+discord.on_member_update()
     await message.channel.send("変えた？")
 
 
