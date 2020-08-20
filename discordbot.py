@@ -19,8 +19,13 @@ async def on_ready():
 
 
 @bot.event
-async def on_member_join(member):
+async def on_member_join(Member):
     await message.channel.send('きたーん')
+
+
+@bot.event
+async def on_member_update():
+    await message.channel.send("変えた？")
 
 
 # メッセージ受信時に動作する処理
