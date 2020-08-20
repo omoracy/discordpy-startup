@@ -17,11 +17,13 @@ async def on_command_error(ctx, error):
 async def on_ready():
     print('We have logged in as {0.user}'.format(bot))
 
-@bot.event  
-async def on_member_join(member):  
-    CHANNEL_ID = 738358135000924253  
-    channel = bot.get_channel(CHANNEL_ID)  
-    await channel.send(str(member.mention)+'さん！ようこそ！') 
+@bot.event
+async def on_member_join(member):
+    CHANNEL_ID = 738358135000924253
+    channel = bot.get_channel(CHANNEL_ID)
+    await channel.send(str(member.mention)+'さん！好奇心王国へようこそ！')
+    await channel.send('はじめまして。好奇心AIの「ロロたん」です。')
+    await channel.send('ここにたどり着いたということは、きっとあなたは好奇心が旺盛な方ですね！')
 
 
 
