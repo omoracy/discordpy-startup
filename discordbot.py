@@ -23,10 +23,6 @@ discord.on_member_join(member):
     await message.channel.send('きたーん')
 
 
-@bot.event
-discord.on_member_update()
-    await message.channel.send("変えた？")
-
 
 # メッセージ受信時に動作する処理
 @bot.event
