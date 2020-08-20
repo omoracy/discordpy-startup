@@ -44,17 +44,11 @@ async def on_member_update(member):
     await channel.send(str(member.mention)+'さん！好奇心王国へようこそ！')
     await channel.send('はじめまして。好奇心AIの「ロロたん」です。')
     await channel.send('ここにたどり着いたということは、きっとあなたは好奇心が旺盛な方ですね！')
-    await channel.send('　')
     await channel.send('好奇心王国は「テクノロジー」をテーマとした「アイデア発想」や「アイデアの実装」などの活動を通して一人ひとりの個性が混じり合う場所です。')
-    await channel.send('　')
     await channel.send('メインとなる活動は「テクノロジー大喜利」。')
     await channel.send('テクノロジーの使い方に関するお題に対して、いかにくだらないアイデアを出すかを楽しむ遊びです。（まともなアイデアでもただのウケ狙いでも、どんなアイデアでもOK！）')
     await channel.send('テクノロジー大喜利はオープンエリア（観光エリア）でのアクティビティなので誰でもご参加可能です。')
-    await channel.send('　')
     await channel.send('「#②入国ルール」と「#③チャンネルの使い方」を確認して、皆でワクワクと交流を楽しみましょう！')
-    await channel.send('')
-    await channel.send('')
-    await channel.send('')
 
 
 # メッセージ受信時に動作する処理
