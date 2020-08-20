@@ -19,7 +19,7 @@ async def on_ready():
 
 @bot.event  
 async def on_member_join(member):  
-    CHANNEL_ID = #チャンネルID(int)  
+    CHANNEL_ID = はじめに  
     channel = bot.get_channel(CHANNEL_ID)  
     await channel.send(str(member.mention)+'さん！ようこそ！') 
 
