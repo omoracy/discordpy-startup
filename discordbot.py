@@ -19,7 +19,7 @@ async def on_ready():
 
 
 @bot.event
-async def on_member_join():
+async def on_member_join(message):
     await message.channel.send('きたーん')
 
 
