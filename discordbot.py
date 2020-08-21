@@ -17,8 +17,7 @@ async def on_command_error(ctx, error):
 async def on_ready():
     channel = bot.get_channel(745875403482071085)
     # 起動時にメッセージの送信
-    await channel.send('監視してるよ＾＾')
-    print('We have logged in as {0.user}'.format(bot))
+    await channel.send('#①はじめに')
 
 
 @bot.event
