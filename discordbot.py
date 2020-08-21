@@ -15,7 +15,11 @@ async def on_command_error(ctx, error):
 
 @bot.event
 async def on_ready():
+    channel = bot.get_channel(745875403482071085)
+    # 起動時にメッセージの送信
+    await channel.send('監視してるよ＾＾')
     print('We have logged in as {0.user}'.format(bot))
+
 
 @bot.event
 async def on_member_join(member):
@@ -25,7 +29,7 @@ async def on_member_join(member):
     channel1 = bot.get_channel(CHANNEL_ID1)
     channel2 = bot.get_channel(CHANNEL_ID2)
     channel3 = bot.get_channel(CHANNEL_ID3)
-    await channel1.send(str(member.mention)+'さん！好奇心王国へようこそ！\n好奇心AIの「ロロたん」です。\nここにたどり着いたということは、きっとあなたは好奇心の旺盛な方ですね！\n\n好奇心王国は「テクノロジー」をテーマとした「アイデア発想」や「アイデアの実装」などの活動を通して一人ひとりの個性が混じり合う場所です。\nメインとなる活動は「テクノロジー大喜利」。テクノロジーの使い方に関するお題に対して、いかにくだらないアイデアを出すかを楽しむ遊びです。（まともなアイデアでもただのウケ狙いでも、どんなアイデアでもOK！）\nOPENエリア（観光エリア）でのアクティビティなので誰でもご参加可能です。\n\nまずは「`#str(channel2)`」と「`#③王国のルール`」のご確認を。\nワクワクする活動と交流を楽しむロロ〜！')
+    await channel1.send(str(member.mention)+'さん！好奇心王国へようこそ！\n好奇心AIの「ロロたん」です。\nここにたどり着いたということは、きっとあなたは好奇心の旺盛な方ですね！\n\n好奇心王国は「テクノロジー」をテーマとした「アイデア発想」や「アイデアの実装」などの活動を通して一人ひとりの個性が混じり合う場所です。\nメインとなる活動は「テクノロジー大喜利」。テクノロジーの使い方に関するお題に対して、いかにくだらないアイデアを出すかを楽しむ遊びです。（まともなアイデアでもただのウケ狙いでも、どんなアイデアでもOK！）\nOPENエリア（観光エリア）でのアクティビティなので誰でもご参加可能です。\n\nまずは「`print(#str(channel2))`」と「#`print(str(channel2))`」のご確認を。\nワクワクする活動と交流を楽しむロロ〜！')
 
 
 # メッセージ受信時に動作する処理
