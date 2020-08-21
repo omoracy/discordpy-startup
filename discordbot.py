@@ -28,7 +28,6 @@ async def on_member_join(member):
     channel1 = bot.get_channel(CHANNEL_ID1)
     channel2 = bot.get_channel(CHANNEL_ID2)
     channel3 = bot.get_channel(CHANNEL_ID3)
-    await channel1.send(#<str(channel_ID2)+str(channel2)>)
     await channel1.send(str(member.mention)+'さん！好奇心王国へようこそ！\n好奇心AIの「ロロたん」です。\nここにたどり着いたということは、きっとあなたは好奇心の旺盛な方ですね！\n\n好奇心王国は「テクノロジー」をテーマとした「アイデア発想」や「アイデアの実装」などの活動を通して一人ひとりの個性が混じり合う場所です。\nメインとなる活動は「テクノロジー大喜利」。テクノロジーの使い方に関するお題に対して、いかにくだらないアイデアを出すかを楽しむ遊びです。（まともなアイデアでもただのウケ狙いでも、どんなアイデアでもOK！）\nOPENエリア（観光エリア）でのアクティビティなので誰でもご参加可能です。\n\nまずは「<#745860737062273045|②チャンネルの使い方>」と「<#738358135470817290|③入国ルール>」のご確認を。\nワクワクする活動と交流を楽しむロロ〜！')
 
 
