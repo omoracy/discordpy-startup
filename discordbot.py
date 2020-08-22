@@ -53,9 +53,9 @@ async def on_message(message):
         await message.delete()
 
     if message.channel.id == 746579828693794926:
-        await client.send_message("ここは神社")
+        await bot.send_message("ここは神社")
         else:
-        await client.send_message("ああ") #指定したIDじゃない場合実行される
+        await bot.send_message("ああ") #指定したIDじゃない場合実行される
 
 
 bot.run(token)
