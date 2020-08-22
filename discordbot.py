@@ -53,10 +53,5 @@ async def on_message(message):
         await message.delete()
 
 
-@bot.event
-    if message.channel.id == 746579828693794926:
-        async def on_message(message)
-            await message.delete()
-
 
 bot.run(token)
