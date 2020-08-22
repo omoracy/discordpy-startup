@@ -6,9 +6,6 @@ bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
 
 
-@bot.command()
-async def ping(ctx):
-    await ctx.send('pong')
 
 @bot.event
 async def on_command_error(ctx, error):
@@ -46,6 +43,15 @@ async def on_message(message):
         await message.channel.send('にゃーん')
 
 
+# ロロたんが入国ルールを返す仕組み
+@bot.event
+async def on_message(message):
+    # メッセージ送信者がBotだった場合は無視する
+    if message.author.bot:
+        return
+    # 「ロロたん、好奇心王国の憲法」と発言したら「好奇心憲章」が返る処理
+    if message.content == 'ロロたん、好奇心王国の憲法':
+        await message.channel.send('わんわん')
 
 
 
