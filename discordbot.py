@@ -43,8 +43,12 @@ async def on_message(message):
     channel = bot.get_channel(CHANNEL_ID)
 
     # 神社の削除＆役職付与を実装
-    if (message.channel.category_id != 746579828693794926) and if (re.search("呪文", message.content)):
-        await message.delete()
+    if (message.channel.category_id != 746579828693794926) and  (re.search("呪文", message.content)):
+        await message.channel.send('呪文が届いたぞ')
+
+    if (message.channel.category_id != 746579828693794926) and  (re.search("^呪文", message.content)):
+        await message.channel.send('呪文じゃないから削除するぞ')
+
 
     # 「/neko」と発言したら「にゃーん」が返る処理
     if message.content == '/neko':
