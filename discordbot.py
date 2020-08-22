@@ -42,7 +42,7 @@ async def on_message(message):
     if message.content == '/neko':
         await message.channel.send('にゃーん')
     # 「、好奇心王国の憲法」と発言したら「好奇心憲章」が返る処理
-    if message.content == '、':
+    if message.content == '＠ロロたん、好奇心王国の憲法を教えて？':
         await message.channel.send('わんわん')
 
 
