@@ -52,10 +52,11 @@ async def on_message(message):
     if re.search("ぱるぷんてぱるぷんて", message.content):
         await message.delete()
 
+
+@bot.event
     if message.channel.id == 746579828693794926:
-        await bot.send_message("ここは神社")
-        else:
-        await bot.send_message("ああ") #指定したIDじゃない場合実行される
+        async def on_message(message)
+            await message.delete()
 
 
 bot.run(token)
