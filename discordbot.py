@@ -43,11 +43,11 @@ async def on_message(message):
     if message.content == '/neko':
         await message.channel.send('にゃーん')
     # 「、好奇心王国の憲法」と発言したら「好奇心憲章」が返る処理
-    if re.match("好奇心王国の憲法を教えて", message.content):
+    if re.serch("好奇心王国の憲法を教えて", message.content):
         await message.channel.send('はい！好奇心王国への入国にあたり、\n下記を守ることを約束して欲しいロロ！\n\n何より大切なのは、一人ひとりの\n興味やこだわり、そして何でも\n能動的に面白がる気持ちだロロ〜\n\n－－－－好奇心憲章－－－－\n♪自分の好奇心を信じよう\n♪相手の好奇心を尊重しよう\n♪変なことも、一度受け入れて面白がろう\n♪ロジハラ、知識マウント、常識の強要はNG\n♪子供心を大切に、くだらなさを楽しもう\n♪「はじめまして」を大切にしよう\n♪くすぐったくても褒め合いましょう\n－－－－－－－－－－－－－')
-    if re.match("プロジェクト立ち上げのルールってある", message.content):
+    if re.serch("プロジェクト立ち上げのルールってある", message.content):
         await message.channel.send('はい！プロジェクトリーダーにはこんな心構えを持っていて欲しいロロ！\n\n－－－－－－－－－－－－－\n♪「やってみたい」と思う気持ちが最重要\n♪目的はビジネス/アート/趣味、何でもOK\n♪多数決じゃなくリーダーが決定しよう\n♪メンバーをリスペクトしよう\n♪アイデアを出した人や貢献者には何か還元を\n♪もし失敗しても「ネタになる」と思おう\n♪少しの責任と覚悟を持とう\n－－－－－－－－－－－－－')
-    if re.match("好奇心王国の未来像を教えて", message.content):
+    if re.serch("好奇心王国の未来像を教えて", message.content):
         await message.channel.send('わんわん')
 
 
