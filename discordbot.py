@@ -1,6 +1,7 @@
 from discord.ext import commands
 import os
 import traceback
+import re
 
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
@@ -39,10 +40,10 @@ async def on_message(message):
     if message.author.bot:
         return
     # 「/neko」と発言したら「にゃーん」が返る処理
-    if message.content.in == '/neko':
+    if message.content == '/neko':
         await message.channel.send('にゃーん')
     # 「、好奇心王国の憲法」と発言したら「好奇心憲章」が返る処理
-    if message.content.in == '憲法':
+    if re.match("憲法", message.content):
         await message.channel.send('わんわん')
 
 
