@@ -45,7 +45,7 @@ async def on_message(message):
     if (message.channel.category_id != 746579828693794926) and  (re.search("呪文", message.content)):
         await message.channel.send('呪文が届いたぞ')
 
-    if (message.channel.category_id != 746579828693794926) and  (re.search("^呪文", message.content)):
+    if (message.channel.category_id != 746579828693794926) and  (re.search(^"呪文", message.content)):
         await message.channel.send('呪文じゃないから削除するぞ')
 
 
