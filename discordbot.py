@@ -39,18 +39,25 @@ async def on_message(message):
     # メッセージ送信者がBotだった場合は無視する
     if message.author.bot:
         return
+
+    channel = bot.get_channel(CHANNEL_ID)
+
+    # 神社の削除＆役職付与を実装
+    if (message.channel.category_id != 746579828693794926)and(re.search("呪文", message.content)):
+        await message.delete()
+            return
+
     # 「/neko」と発言したら「にゃーん」が返る処理
     if message.content == '/neko':
         await message.channel.send('にゃーん')
-    # 「、好奇心王国の憲法」と発言したら「好奇心憲章」が返る処理
+
+    # 「王国のルール」が返る処理
     if re.search("好奇心王国の憲法を教えて", message.content):
         await message.channel.send('はい！好奇心王国への入国にあたり、\n下記を守ることを約束して欲しいロロ！\n\n－－－－好奇心憲章－－－－\n♪自分の好奇心を信じよう\n♪相手の好奇心を尊重しよう\n♪変なことも、一度受け入れて面白がろう\n♪ロジハラ、知識マウント、常識の強要はNG\n♪子供心を大切に、くだらなさを楽しもう\n♪「はじめまして」を大切にしよう\n♪くすぐったくても褒め合いましょう\n－－－－－－－－－－－－－\n\n    何より大切なのは、一人ひとりの\n興味やこだわり、そして何でも\n能動的に面白がる気持ちだロロ〜')
     if re.search("プロジェクト立ち上げのルールってある", message.content):
         await message.channel.send('はい！前提としてはレジデンス(居住区)の活動となるけど、\nプロジェクトリーダーにはこんな心構えを持っていて欲しいロロ！\n\n－－－－－－－－－－－－－\n♪「好奇心ドリブン」で始めてみよう\n♪目的はビジネス/アート/趣味、何でもOK\n♪多数決じゃなくリーダーが決定しよう\n♪メンバーをリスペクトしよう\n♪アイデアを出した人や貢献者には何か還元を\n♪もし失敗しても「ネタになる」と思おう\n♪少しの責任と覚悟を持とう\n－－－－－－－－－－－－－')
     if re.search("好奇心王国の未来像を教えて", message.content):
         await message.channel.send('わんわん')
-    if (message.channel.category_id != 746579828693794926)and(re.search("呪文", message.content)):
-        await message.delete()
 
 
 bot.run(token)
