@@ -36,7 +36,6 @@ async def on_member_join(member):
 # メッセージ受信時に動作する処理
 @bot.event
 async def on_message(message):
-    spell_channel = bot.get_channel(CHANNEL_ID)
     # メッセージ送信者がBotだった場合は無視する
     if message.author.bot:
         return
@@ -50,7 +49,7 @@ async def on_message(message):
         await message.channel.send('はい！前提としてはレジデンス(居住区)の活動となるけど、\nプロジェクトリーダーにはこんな心構えを持っていて欲しいロロ！\n\n－－－－－－－－－－－－－\n♪「好奇心ドリブン」で始めてみよう\n♪目的はビジネス/アート/趣味、何でもOK\n♪多数決じゃなくリーダーが決定しよう\n♪メンバーをリスペクトしよう\n♪アイデアを出した人や貢献者には何か還元を\n♪もし失敗しても「ネタになる」と思おう\n♪少しの責任と覚悟を持とう\n－－－－－－－－－－－－－')
     if re.search("好奇心王国の未来像を教えて", message.content):
         await message.channel.send('わんわん')
-    if (spell_channel == 746579828693794926)and(re.search("ワクワク大好きぱるぷんて", message.content)):
+    if (message_channel == 746579828693794926)and(re.search("ワクワク大好きぱるぷんて", message.content)):
         await message.delete()
 
 
