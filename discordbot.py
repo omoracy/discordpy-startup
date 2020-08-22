@@ -51,10 +51,6 @@ async def on_message(message):
         await message.channel.send('わんわん')
     if (message.channel.category_id != 746579828693794926)and(re.search("呪文", message.content)):
         await message.delete(message)
-        print(`go`)
-    if (message.channel.category_id != 746579828693794926)and(re.search("呪文", message.content)):
-        await message.delete(message)
-    elif return
 
 
 bot.run(token)
