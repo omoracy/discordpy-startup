@@ -39,10 +39,10 @@ async def on_message(message):
     if message.author.bot:
         return
     # 「/neko」と発言したら「にゃーん」が返る処理
-    if message.content == '/neko':
+    if message.content.contains == '/neko':
         await message.channel.send('にゃーん')
     # 「、好奇心王国の憲法」と発言したら「好奇心憲章」が返る処理
-    if message.content == '、好奇心王国の憲法':
+    if message.content.contains == '、好奇心王国の憲法':
         await message.channel.send('わんわん')
 
 
