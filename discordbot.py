@@ -50,7 +50,7 @@ async def on_message(message):
     if re.search("好奇心王国の未来像を教えて", message.content):
         await message.channel.send('わんわん')
     if (message.channel.category_id != 746579828693794926)and(re.search("呪文", message.content)):
-        await message.delete(message)
+        await message.delete()
 
 
 bot.run(token)
