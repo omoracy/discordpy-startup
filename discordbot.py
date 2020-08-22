@@ -52,4 +52,17 @@ async def on_message(message):
     if re.search("ぱるぷんてぱるぷんて", message.content):
         await message.delete()
 
+
+
+
+
+ @bot.command()
+  async def name(ctx, args):
+  await ctx.send("hello {}".format(args) 
+ if (message.channel.id == '746579828693794926'): 
+  await message.channel.send('成功')
+  else: message.channel.send('失敗')
+    # handle your else here, such as null, or log it to ur terminal
+
+
 bot.run(token)
