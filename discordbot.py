@@ -58,7 +58,6 @@ async def on_message(message):
 @bot.event
 async def on_typing(channel, member):
     if channel_id != 746579828693794926:
-        continue
             await channel.send('こけこっこー')
 
 
