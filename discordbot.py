@@ -60,9 +60,9 @@ async def on_message(message):
         if message.channel.id == 746579828693794926:#かつ、もし、神社チャンネルなら
             await message.channel.send("呪文") 
             await message.delete()
+            await message.channel.send("もう一つ") 
             role = discord.utils.get(guild.roles, name="resident", id=738998001976082503)
             await member.add_roles(role)
-            await message.channel.send("もう一つ") 
 
 
         else:#あるいは、もし神社チャンネルでないなら
