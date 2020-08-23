@@ -46,6 +46,8 @@ async def on_message(message):
     # 「/neko」と発言したら「にゃーん」が返る処理
     if message.content == '/neko':
         await message.channel.send('にゃーん')
+            await message.delete()#あとで消す！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
+
 
     # 「王国のルール」が返る処理
     if re.search("好奇心王国の憲法を教えて", message.content):
@@ -59,6 +61,9 @@ async def on_message(message):
         if message.channel.id == 746579828693794926:#かつ、もし、神社チャンネルなら
             await message.channel.send("呪文") 
             await message.delete()
+            guild = message.guild
+            role = guild.get_role(738998001976082503)
+            await message.author.add_roles(role)
 
         else:#あるいは、もし神社チャンネルでないなら
             await message.channel.send("ここではコマンドは実施できません") 
