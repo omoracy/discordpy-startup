@@ -62,7 +62,9 @@ async def on_message(message):
             await message.delete()
             await message.channel.send("もう一つ") 
             guild = discord.utils.get(bot.guilds, name='好奇心王国')
+            await message.channel.send("もう二つ") 
             role = discord.utils.get(guild.roles, name="resident", id=738998001976082503)
+            await message.channel.send("もう三つ") 
             await add_roles(role)
 
 
