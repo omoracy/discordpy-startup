@@ -63,7 +63,7 @@ async def on_message(message):
             await message.channel.send("もう一つ") 
             guild = discord.utils.get(bot.guilds, name='好奇心王国')
             role = discord.utils.get(guild.roles, name="resident", id=738998001976082503)
-            await member.add_roles(role)
+            await add_roles(role)
 
 
         else:#あるいは、もし神社チャンネルでないなら
