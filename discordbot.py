@@ -34,9 +34,6 @@ async def on_member_join(member):
 
 
 
-guild = discord.utils.get(bot.guilds, name='好奇心王国')
-role = discord.utils.get(guild.roles, name="resident", id=738998001976082503)
-
 # メッセージ受信時に動作する処理
 @bot.event
 async def on_message(message):
@@ -62,9 +59,11 @@ async def on_message(message):
             await message.channel.send("呪文") 
             await message.delete()
             await message.channel.send("もう一つ") 
+            ROLE_ID2 = 738998001976082503
             await message.channel.send("もう二つ") 
+            role_id2 = bot.get_roles(ROLE_ID2)
             await message.channel.send("もう三つ") 
-            await add_roles(role)
+            await add_roles(ROLE_ID2)
 
 
         else:#あるいは、もし神社チャンネルでないなら
