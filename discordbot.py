@@ -77,11 +77,6 @@ async def on_message(message):
             await message.channel.send("ここではコマンドは実施できません") 
 
 
-    if re.search("役職", message.content): #もし、役職を含むメッセージ
-        ROLE_ID2 = 738998001976082503
-            await message.guild.members.add_roles(ROLE_ID2)
-
-
 
 
 bot.run(token)
