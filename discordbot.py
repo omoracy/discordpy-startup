@@ -72,13 +72,11 @@ async def on_message(message):
         await message.channel.send('わんわん')
 
     if re.search("こんにちは", message.content): #もし、こんにちはを含むメッセージで、
-        ID_CHANNEL_README = 746579828693794926 # 該当のチャンネルのID
-        ID_ROLE_WELCOME = 738998001976082503 # 付けたい役職のID
                 # channel_id から Channel オブジェクトを取得
                 channel = bot.get_channel(payload.channel_id)
 
                 # 該当のチャンネル以外はスルー
-                if channel.id != ID_CHANNEL_README:
+                if channel.id != 746579828693794926:
                     return
 
                 # guild_id から Guild オブジェクトを取得
@@ -88,7 +86,7 @@ async def on_message(message):
                 member = guild.get_member(payload.user_id)
 
                 # 用意した役職IDから Role オブジェクトを取得
-                role = guild.get_role(ID_ROLE_WELCOME)
+                role = guild.get_role(738998001976082503)
 
                 # リアクションを付けたメンバーに役職を付与
                 await member.add_roles(role)
