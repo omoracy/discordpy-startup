@@ -70,7 +70,7 @@ async def on_message(message):
     if re.search("こんにちは", message.content): #もし、こんにちはを含むメッセージで、
         if message.channel.id == 746579828693794926:#かつ、もし、神社チャンネルなら
             await message.channel.send("呪文") 
-            role = bot.get_role(738998001976082503)
+            role = member.get_role(738998001976082503)
             await message.author.add_roles(role)
             await message.delete()
             await message.channel.send("もう一つ")
