@@ -1,5 +1,7 @@
 from discord.ext import commands
-
+import os
+import traceback
+import re
 
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
@@ -28,6 +30,7 @@ async def on_error(ctx, error):
 
 @bot.event
 async def on_ready():
+    channel = bot.get_channel(745875403482071085)
     print('Logged in as')
     print(client.user.name)
     print(client.user.id)
