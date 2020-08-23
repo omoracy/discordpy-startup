@@ -72,7 +72,6 @@ async def on_message(message):
             await message.channel.send("呪文") 
             await message.delete()
             await message.channel.send("もう一つ")
-            print("プリントするぜ")
 
         else:#あるいは、もし神社チャンネルでないなら
             await message.channel.send("ここではコマンドは実施できません") 
