@@ -52,13 +52,13 @@ ID_ROLE_WELCOME = 738998001976082503 # 付けたい役職のID
 
 @bot.event
 async def on_message(message):
-    if message.channel != 746579828693794926:
+    if message.channel_id != 746579828693794926:
         return
 
     # channel_id から Channel オブジェクトを取得
     channel = bot.get_channel(message.channel_id)
 
-    await channel.send("2")
+    await channel.send("元気")
 
     # guild_id から Guild オブジェクトを取得
     guild = bot.get_guild(message.guild_id)
