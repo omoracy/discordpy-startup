@@ -55,7 +55,7 @@ async def on_message(message):
 
 
 
-@bot.command()
+@bot.event
 async def on_typing():
     bot.get_channel(spellchannel)
     if spellchannel != 746579828693794926:
