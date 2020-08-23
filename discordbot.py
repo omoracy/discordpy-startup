@@ -48,8 +48,7 @@ async def on_member_join(member):
 
 
 
-ID_CHANNEL_README = 746579828693794926 # 該当のチャンネルのID
-ID_ROLE_WELCOME = 738998001976082503 # 付けたい役職のID
+
 
 
 # メッセージ受信時に動作する処理
@@ -73,6 +72,8 @@ async def on_message(message):
         await message.channel.send('わんわん')
 
     if re.search("こんにちは", message.content): #もし、こんにちはを含むメッセージで、
+        ID_CHANNEL_README = 746579828693794926 # 該当のチャンネルのID
+        ID_ROLE_WELCOME = 738998001976082503 # 付けたい役職のID
                 # channel_id から Channel オブジェクトを取得
                 channel = bot.get_channel(payload.channel_id)
 
