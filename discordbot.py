@@ -61,6 +61,8 @@ async def on_message(message):
             await message.channel.send("呪文") 
             await message.delete()
             await member.add_roles(resident)
+            print(member)
+            print(member.roles)
 
         else:#あるいは、もし神社チャンネルでないなら
             await message.channel.send("ここではコマンドは実施できません") 
