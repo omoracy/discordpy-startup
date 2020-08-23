@@ -81,6 +81,7 @@ async def on_message(message):
 
 
     if re.search("役職", message.content): #もし、役職を含むメッセージ
+        async def set_members(ctx):
             role = bot.get_role(738998001976082503)
             await message.guild.members.add_roles(role)
 
