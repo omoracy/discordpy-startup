@@ -57,14 +57,12 @@ async def on_message(message):
         await message.channel.send('わんわん')
 
 
-    #抽選チャンネルID（動作させるサーバによって変更してください）
-        lot_channel_id = 746579828693794926 #ここにコマンドを送るチャンネルID
     if re.search("こんにちは", message.content): #こんにちはを含むメッセージ
         #指定したチャンネルとメッセージを送ったチャンネルが同じIDなら実行
-        if message.channel.id == lot_channel_id:
-            await message.channel.send(lot_channel, "Good afternoon")
+        if message.channel.id == 746579828693794926:
+            await message.channel.send("Good afternoon")
         else:
-            await message.channel.send(message.channel, "ここではコマンドは実施できません") #指定したIDじゃない場合実行される
+            await message.channel.send("ここではコマンドは実施できません") #指定したIDじゃない場合実行される
 
 
 bot.run(token)
