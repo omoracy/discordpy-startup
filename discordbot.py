@@ -34,7 +34,8 @@ async def on_member_join(member):
 
 
 
-
+guild = discord.utils.get(bot.guilds, name='好奇心王国')
+role = discord.utils.get(guild.roles, name="resident", id=738998001976082503)
 
 # メッセージ受信時に動作する処理
 @bot.event
@@ -57,8 +58,6 @@ async def on_message(message):
         await message.channel.send('わんわん')
 
     if re.search("こんにちは", message.content): #もし、こんにちはを含むメッセージで、
-        guild = discord.utils.get(bot.guilds, name='好奇心王国')
-        role = discord.utils.get(guild.roles, name="resident", id=738998001976082503)
         if message.channel.id == 746579828693794926:#かつ、もし、神社チャンネルなら
             await message.channel.send("呪文") 
             await message.delete()
