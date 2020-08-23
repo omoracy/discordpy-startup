@@ -48,53 +48,32 @@ async def on_member_join(member):
 
 
 
+ID_CHANNEL_README = 746579828693794926 # 該当のチャンネルのID
+ID_ROLE_WELCOME = 738998001976082503 # 付けたい役職のID
 
-
-
-# メッセージ受信時に動作する処理
 @bot.event
-async def on_message(message):
-    # メッセージ送信者がBotだった場合は無視する
-    if message.author.bot:
+async def on_rmessage(message):
+    # channel_id から Channel オブジェクトを取得
+    channel = bot.get_channel(message.channel_id)
+
+    # 該当のチャンネル以外はスルー
+    if channel.id != ID_CHANNEL_README:
         return
 
-    # 「/neko」と発言したら「にゃーん」が返る処理
-    if message.content == '/neko':
-        await message.channel.send('にゃーん')
+    # guild_id から Guild オブジェクトを取得
+    guild = bot.get_guild(message.guild_id)
 
+    # user_id から Member オブジェクトを取得
+    member = guild.get_member(message.user_id)
 
-    # 「王国のルール」が返る処理
-    if re.search("好奇心王国の憲法を教えて", message.content):
-        await message.channel.send('はい！好奇心王国への入国にあたり、\n下記を守ることを約束して欲しいロロ！\n\n－－－－好奇心憲章－－－－\n♪自分の好奇心を信じよう\n♪相手の好奇心を尊重しよう\n♪変なことも、一度受け入れて面白がろう\n♪ロジハラ、知識マウント、常識の強要はNG\n♪子供心を大切に、くだらなさを楽しもう\n♪「はじめまして」を大切にしよう\n♪くすぐったくても褒め合いましょう\n－－－－－－－－－－－－－\n\n    何より大切なのは、一人ひとりの\n興味やこだわり、そして何でも\n能動的に面白がる気持ちだロロ〜')
-    if re.search("プロジェクト立ち上げのルールってある", message.content):
-        await message.channel.send('はい！前提としてはレジデンス(居住区)の活動となるけど、\nプロジェクトリーダーにはこんな心構えを持っていて欲しいロロ！\n\n－－－－－－－－－－－－－\n♪「好奇心ドリブン」で始めてみよう\n♪目的はビジネス/アート/趣味、何でもOK\n♪多数決じゃなくリーダーが決定しよう\n♪メンバーをリスペクトしよう\n♪アイデアを出した人や貢献者には何か還元を\n♪もし失敗しても「ネタになる」と思おう\n♪少しの責任と覚悟を持とう\n－－－－－－－－－－－－－')
-    if re.search("好奇心王国の未来像を教えて", message.content):
-        await message.channel.send('わんわん')
+    # 用意した役職IDから Role オブジェクトを取得
+    role = guild.get_role(ID_ROLE_WELCOME)
 
-    if re.search("こんにちは", message.content): #もし、こんにちはを含むメッセージで、
-                # channel_id から Channel オブジェクトを取得
-                channel = bot.get_channel(payload.channel_id)
+    # リアクションを付けたメンバーに役職を付与
+    await member.add_roles(role)
 
-                # 該当のチャンネル以外はスルー
-                if channel.id != 746579828693794926:
-                    return
-
-                # guild_id から Guild オブジェクトを取得
-                guild = bot.get_guild(payload.guild_id)
-
-                # user_id から Member オブジェクトを取得
-                member = guild.get_member(payload.user_id)
-
-                # 用意した役職IDから Role オブジェクトを取得
-                role = guild.get_role(738998001976082503)
-
-                # リアクションを付けたメンバーに役職を付与
-                await member.add_roles(role)
-
-                # 分かりやすいように歓迎のメッセージを送る
-                await channel.send('いらっしゃいませ！')
-
-
+    # 分かりやすいように歓迎のメッセージを送る
+    await channel.send('いらっしゃいませ！')
 
 
 bot.run(token)
