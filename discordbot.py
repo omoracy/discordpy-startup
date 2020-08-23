@@ -73,9 +73,6 @@ async def on_message(message):
         await message.channel.send('わんわん')
 
     if re.search("こんにちは", message.content): #もし、こんにちはを含むメッセージで、
-        if message.channel.id == 746579828693794926:#かつ、もし、神社チャンネルなら
-            await message.channel.send("呪文") 
-            await message.channel.send("もう一つ")
                 # channel_id から Channel オブジェクトを取得
                 channel = bot.get_channel(payload.channel_id)
 
