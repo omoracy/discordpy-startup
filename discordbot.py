@@ -31,10 +31,8 @@ async def on_error(ctx, error):
 @bot.event
 async def on_ready():
     channel = bot.get_channel(745875403482071085)
-    print('Logged in as')
-    print(client.user.name)
-    print(client.user.id)
-    print('------')
+    # 起動時にメッセージの送信
+    await channel.send('今日も働いているロロ〜')
 
 
 @bot.event
@@ -81,9 +79,8 @@ async def on_message(message):
 
 
     if re.search("役職", message.content): #もし、役職を含むメッセージ
-        async def set_members(ctx):
-            role = bot.get_role(738998001976082503)
-            await message.guild.members.add_roles(role)
+        ROLE_ID2 = 738998001976082503
+            await message.guild.members.add_roles(ROLE_ID2)
 
 
 
