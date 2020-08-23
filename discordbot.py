@@ -56,11 +56,12 @@ async def on_message(message):
 
 
 @bot.command()
-async def on_typing(channel):
-    if channel != 746579828693794926:
-    else
-        return
-    if re.search("呪文", message.content):
+async def on_typing():
+    bot.get_channel(spellchannel)
+    if spellchannel != 746579828693794926:
+        else
+            return
+    and if re.search("呪文", message.content):
         await message.channel.send('呪文が届いたぞ')
 
 
