@@ -96,11 +96,6 @@ async def on_message(message):
                 await channel.send('いらっしゃいませ！')
 
 
-        else:#あるいは、もし神社チャンネルでないなら
-            await message.channel.send("ここではコマンドは実施できません") 
-
-
-
 
 
 bot.run(token)
