@@ -61,11 +61,11 @@ async def on_message(message):
     if re.search("こんにちは", message.content): #もし、こんにちはを含むメッセージで、
         if message.channel.id == 746579828693794926:#かつ、もし、神社チャンネルなら
             member = message.author
-            var = discord.utils.get(message.guild.roles, name = resident)#レジデントを与える
-                await member.add_role(var)
+            resident = 738998001976082503
+                await member.add_roles(resident)
                 await message.channel.send("Good afternoon")
-        else:
-            await message.channel.send("ここではコマンドは実施できません") #あるいは、もし神社チャンネルでないなら
+        else:#あるいは、もし神社チャンネルでないなら
+            await message.channel.send("ここではコマンドは実施できません") 
 
 
 bot.run(token)
