@@ -46,7 +46,6 @@ async def on_message(message):
     # 「/neko」と発言したら「にゃーん」が返る処理
     if message.content == '/neko':
         await message.channel.send('にゃーん')
-            await message.delete()#あとで消す！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
 
 
     # 「王国のルール」が返る処理
