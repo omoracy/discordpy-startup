@@ -47,6 +47,11 @@ async def on_member_join(member):
 
 
 
+
+ID_CHANNEL_README = 746579828693794926 # 該当のチャンネルのID
+ID_ROLE_WELCOME = 738998001976082503 # 付けたい役職のID
+
+
 # メッセージ受信時に動作する処理
 @bot.event
 async def on_message(message):
@@ -71,39 +76,34 @@ async def on_message(message):
         if message.channel.id == 746579828693794926:#かつ、もし、神社チャンネルなら
             await message.channel.send("呪文") 
             await message.channel.send("もう一つ")
+                # channel_id から Channel オブジェクトを取得
+                channel = bot.get_channel(payload.channel_id)
+
+                # 該当のチャンネル以外はスルー
+                if channel.id != ID_CHANNEL_README:
+                    return
+
+                # guild_id から Guild オブジェクトを取得
+                guild = bot.get_guild(payload.guild_id)
+
+                # user_id から Member オブジェクトを取得
+                member = guild.get_member(payload.user_id)
+
+                # 用意した役職IDから Role オブジェクトを取得
+                role = guild.get_role(ID_ROLE_WELCOME)
+
+                # リアクションを付けたメンバーに役職を付与
+                await member.add_roles(role)
+
+                # 分かりやすいように歓迎のメッセージを送る
+                await channel.send('いらっしゃいませ！')
+
 
         else:#あるいは、もし神社チャンネルでないなら
             await message.channel.send("ここではコマンドは実施できません") 
 
 
 
-
-ID_CHANNEL_README = 746579828693794926 # 該当のチャンネルのID
-ID_ROLE_WELCOME = 738998001976082503 # 付けたい役職のID
-
-@bot.event
-async def on_raw_reaction_add(payload):
-    # channel_id から Channel オブジェクトを取得
-    channel = bot.get_channel(payload.channel_id)
-
-    # 該当のチャンネル以外はスルー
-    if channel.id != ID_CHANNEL_README:
-        return
-
-    # guild_id から Guild オブジェクトを取得
-    guild = bot.get_guild(payload.guild_id)
-
-    # user_id から Member オブジェクトを取得
-    member = guild.get_member(payload.user_id)
-
-    # 用意した役職IDから Role オブジェクトを取得
-    role = guild.get_role(ID_ROLE_WELCOME)
-
-    # リアクションを付けたメンバーに役職を付与
-    await member.add_roles(role)
-
-    # 分かりやすいように歓迎のメッセージを送る
-    await channel.send('いらっしゃいませ！')
 
 
 bot.run(token)
