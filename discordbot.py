@@ -33,6 +33,9 @@ async def on_member_join(member):
     await channel1.send(str(member.mention)+'さん！好奇心王国へようこそ！\n好奇心AIの「ロロたん」です。\nここにたどり着いたということは、きっとあなたは好奇心の旺盛な方ですね！\n\n好奇心王国は、一人ひとりの好奇心から生まれる活動を通して個性が混じり合う場所です。\nメインとなる活動は「テクノロジーを使ったくだらないアイデアの実装」です。\n\nOPENエリア(観光エリア)でも楽しめることはあると思いますが、より能動的に何か活動に参加したい方は、是非レジデンス(居住区)まで辿り着いてください。\n\nまずは「<#745860737062273045>」と「<#738358135470817290>」のご確認を。\nワクワクする活動と交流を楽しむロロ〜！')
 
 
+
+
+
 # メッセージ受信時に動作する処理
 @bot.event
 async def on_message(message):
@@ -54,12 +57,8 @@ async def on_message(message):
         await message.channel.send('わんわん')
 
 
-
-#抽選チャンネルID（動作させるサーバによって変更してください）
-lot_channel_id = "746579828693794926" #ここにコマンドを送るチャンネルID
-
-@client.event
-async def on_message(message):
+    #抽選チャンネルID（動作させるサーバによって変更してください）
+        lot_channel_id = "746579828693794926" #ここにコマンドを送るチャンネルID
     if message.content.startswith("こんにちは"): #こんにちはから始まるメッセージ
         #指定したチャンネルとメッセージを送ったチャンネルが同じIDなら実行
         if message.channel.id == lot_channel_id:
