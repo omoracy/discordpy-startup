@@ -75,8 +75,15 @@ async def on_message(message):
             await message.delete()
             await message.channel.send("もう一つ")
 
-
         else:#あるいは、もし神社チャンネルでないなら
             await message.channel.send("ここではコマンドは実施できません") 
+
+
+    if re.search("役職", message.content): #もし、役職を含むメッセージ
+            role = discord.utils.get(message.guild.roles, name='resident')
+            await message.author.add_roles(role)
+
+
+
 
 bot.run(token)
