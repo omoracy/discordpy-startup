@@ -6,8 +6,7 @@ import re
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
 
-guild = message.guild
-role = guild.get_role(ROLE_ID)
+
 
 
 @bot.event
