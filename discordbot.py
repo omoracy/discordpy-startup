@@ -58,11 +58,7 @@ async def on_message(message):
 @bot.event
 async def on_typing(channel, member):
     if channel_id != 746579828693794926:
-        else
-            return
-    async def on_message(message):
-        if re.search("呪文", message.content):
-            await message.channel.send('呪文が届いたぞ')
+        await message.channel.send('こけこっこー')
 
 
 bot.run(token)
