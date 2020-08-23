@@ -59,9 +59,9 @@ async def on_message(message):
             await message.channel.send("呪文") 
             await message.delete()
             await message.channel.send("もう一つ") 
-            ROLE_ID2 = 738998001976082503
+            ROLE_NAME2 = str(resident)
             await message.channel.send("もう二つ") 
-            await message.channel.set_permissions(ROLE_ID2, send_messages=True, read_messages=True)
+            await message.author.add_roles(ROLE_NAME2)
             await message.channel.send("もう三つ") 
 
 
