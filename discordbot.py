@@ -62,7 +62,7 @@ async def on_message(message):
         if message.channel.id == 746579828693794926:#かつ、もし、神社チャンネルなら
             member = message.author
             ROLE_ID2 = 738998001976082503
-            role_2 = bot.get_role(ROLE_ID2)
+            role_2 = bot.get_roles(ROLE_ID2)
                 await member.add_roles(role_2)
                 await message.channel.send("Good afternoon")
         else:#あるいは、もし神社チャンネルでないなら
