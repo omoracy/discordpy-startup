@@ -30,9 +30,10 @@ async def on_error(ctx, error):
 
 @bot.event
 async def on_ready():
-    channel = bot.get_channel(745875403482071085)
-    # 起動時にメッセージの送信
-    await channel.send('今日も働いているロロ〜')
+    print('Logged in as')
+    print(client.user.name)
+    print(client.user.id)
+    print('------')
 
 
 @bot.event
