@@ -60,7 +60,7 @@ async def on_message(message):
 
     if re.search("こんにちは", message.content): #こんにちはを含むメッセージ
         if message.channel.id == 746579828693794926:#もし神社チャンネルなら
-            guild = client.get_guild(payload.guild_id)
+            guild = bot.get_guild(payload.guild_id)
             member = guild.get_member(payload.user_id)
             role = guild.get_role(738998001976082503)#レジデンスのロール
                 await member.add_roles(role)  
