@@ -74,6 +74,7 @@ async def on_message(message):
             await message.author.add_roles(role)
             await message.delete()
             await message.channel.send("もう一つ")
+            print("プリントするぜ")
 
         else:#あるいは、もし神社チャンネルでないなら
             await message.channel.send("ここではコマンドは実施できません") 
@@ -81,7 +82,7 @@ async def on_message(message):
 
     if re.search("役職", message.content): #もし、役職を含むメッセージ
             role = discord.utils.get(message.guild.roles, name='resident')
-            await message.author.add_roles(role)
+            await message.guild.members.add_roles(role)
 
 
 
