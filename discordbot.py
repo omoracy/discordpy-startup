@@ -56,11 +56,15 @@ async def on_message(message):
     if re.search("好奇心王国の未来像を教えて", message.content):
         await message.channel.send('わんわん')
 
+    if re.search("住人", message.content):
+        await message.channel.send('住人')
+            role = discord.utils.get(message.guild.roles, id=int(738998001976082503))
+            await message.author.add_roles(role) # 上記で取得したロールを付与
+
 
     if re.search("こんにちは", message.content): #もし、こんにちはを含むメッセージで、
         if message.channel.id == 746579828693794926:#かつ、もし、神社チャンネルなら
-            role = discord.utils.get(message.guild.roles, id=int(738998001976082503))
-            await message.author.add_roles(role) # 上記で取得したロールを付与
+
         else:#あるいは、もし神社チャンネルでないなら
             await message.channel.send("ここではコマンドは実施できません") 
 
