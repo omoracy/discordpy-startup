@@ -62,9 +62,9 @@ async def on_message(message):
     if message.content == 'こんにちは': #こんにちはと一致するメッセージ
         #指定したチャンネルとメッセージを送ったチャンネルが同じIDなら実行
         if message.channel.id == lot_channel_id:
-            await bot.send_message(lot_channel, "Good afternoon")
+            await message.channel.send(lot_channel, "Good afternoon")
         else:
-            await bot.send_message(message.channel, "ここではコマンドは実施できません") #指定したIDじゃない場合実行される
+            await message.channel.send(message.channel, "ここではコマンドは実施できません") #指定したIDじゃない場合実行される
 
 
 bot.run(token)
