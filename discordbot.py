@@ -56,7 +56,7 @@ async def on_message(message):
 
     if re.search("こんにちは", message.content): #もし、こんにちはを含むメッセージで、
         if message.channel.id == 746579828693794926:#かつ、もし、神社チャンネルなら
-            role = resident
+            role = discord.utils.get(ctx.message.server.roles, name="resident", id=738998001976082503)
             await message.author.add_roles(role)
             await message.channel.send("呪文") 
             await message.delete()
