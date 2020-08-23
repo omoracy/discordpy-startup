@@ -56,8 +56,8 @@ async def on_message(message):
 
 
 @bot.command()
-async def on_typing(spellchannel):
-    if spellchannel != 746579828693794926:
+async def on_typing(channel):
+    if channel != 746579828693794926:
     else
         return
     if re.search("呪文", message.content):
