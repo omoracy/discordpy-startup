@@ -61,7 +61,7 @@ async def on_message(message):
             await message.channel.send("呪文") 
             await message.delete()
             role = discord.utils.get(guild.roles, name="resident", id=738998001976082503)
-            await member.add_roles(resident)
+            await member.add_roles(role)
 
         else:#あるいは、もし神社チャンネルでないなら
             await message.channel.send("ここではコマンドは実施できません") 
