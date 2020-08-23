@@ -55,10 +55,17 @@ async def on_message(message):
 
 
 
-@bot.event
-async def on_typing(channel, member):
-    if channel_id != 746579828693794926:
-            await message.channel.send('こけこっこー')
+#抽選チャンネルID（動作させるサーバによって変更してください）
+lot_channel_id = "746579828693794926" #ここにコマンドを送るチャンネルID
+
+@client.event
+async def on_message(message):
+    if message.content.startswith("こんにちは"): #こんにちはから始まるメッセージ
+        #指定したチャンネルとメッセージを送ったチャンネルが同じIDなら実行
+        if message.channel.id == lot_channel_id:
+            await client.send_message(lot_channel, "Good afternoon")
+        else:
+            await client.send_message(message.channel, "ここではコマンドは実施できません") #指定したIDじゃない場合実行される
 
 
 bot.run(token)
