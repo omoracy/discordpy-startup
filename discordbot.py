@@ -7,6 +7,19 @@ bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
 
 
+# コマンドに対応するリストデータを取得する関数を定義
+def get_data(message):
+    command = message.content
+    data_table = {
+        '/members': message.guild.members, # メンバーのリスト
+        '/roles': message.guild.roles, # 役職のリスト
+        '/text_channels': message.guild.text_channels, # テキストチャンネルのリスト
+        '/voice_channels': message.guild.voice_channels, # ボイスチャンネルのリスト
+        '/category_channels': message.guild.categories, # カテゴリチャンネルのリスト
+    }
+    return data_table.get(command, '無効なコマンドです')
+
+
 
 @bot.event
 async def on_error(ctx, error):
@@ -56,8 +69,6 @@ async def on_message(message):
 
     if re.search("こんにちは", message.content): #もし、こんにちはを含むメッセージで、
         if message.channel.id == 746579828693794926:#かつ、もし、神社チャンネルなら
-            role = discord.utils.get(ctx.message.server.roles, name="resident", id=738998001976082503)
-            await message.author.add_roles(role)
             await message.channel.send("呪文") 
             await message.delete()
             await message.channel.send("もう一つ")
