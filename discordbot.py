@@ -78,8 +78,7 @@ async def on_message(message):
 
 
 
-ID_CHANNEL_README = 746579828693794926 # 該当のチャンネルのID
-ID_ROLE_WELCOME = 738998001976082503 # 付けたい役職のID
+
 
 @client.event
 async def on_raw_reaction_add(payload):
