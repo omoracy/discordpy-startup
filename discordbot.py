@@ -60,7 +60,6 @@ async def on_message(message):
         if message.channel.id == 746579828693794926:#かつ、もし、神社チャンネルなら
             await message.channel.send("呪文") 
             await message.delete()
-            await member.add_roles(resident)
             print(member)
             print(member.roles)
 
