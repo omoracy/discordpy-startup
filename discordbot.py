@@ -6,6 +6,7 @@ import re
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
 
+guild = bot.get_guild(payload.guild_id)
 
 
 
@@ -58,15 +59,6 @@ async def on_message(message):
         await message.channel.send('わんわん')
 
 
-    if re.search("こんにちは", message.content): #こんにちはを含むメッセージ
-        if message.channel.id == 746579828693794926:#もし神社チャンネルなら
-            guild = bot.get_guild(payload.guild_id)
-            member = guild.get_member(payload.user_id)
-            role = guild.get_role(738998001976082503)#レジデンスのロール
-                await member.add_roles(role)  
-                await message.channel.send("Good afternoon")
-        else:
-            await message.channel.send("ここではコマンドは実施できません") #指定したIDじゃない場合実行される
 
 
 bot.run(token)
