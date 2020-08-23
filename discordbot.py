@@ -60,6 +60,8 @@ async def on_message(message):
         if message.channel.id == 746579828693794926:#かつ、もし、神社チャンネルなら
             await message.channel.send("呪文") 
             await message.delete()
+                role = discord.utils.get(ctx.message.server.roles, name=resident)
+                await bot.add_roles(ctx.message.author, role)
 
         else:#あるいは、もし神社チャンネルでないなら
             await message.channel.send("ここではコマンドは実施できません") 
