@@ -61,9 +61,8 @@ async def on_message(message):
             await message.channel.send("もう一つ") 
             ROLE_ID2 = 738998001976082503
             await message.channel.send("もう二つ") 
-            role_id2 = bot.get_roles(ROLE_ID2)
-            await message.channel.send("もう三つ") 
             await add_roles(ROLE_ID2)
+            await message.channel.send("もう三つ") 
 
 
         else:#あるいは、もし神社チャンネルでないなら
