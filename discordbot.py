@@ -59,8 +59,8 @@ async def on_message(message):
 
     if re.search("こんにちは", message.content): #もし、こんにちはを含むメッセージで、
         if message.channel.id == 746579828693794926:#かつ、もし、神社チャンネルなら
-            role = discord.utils.get(message.server.roles, name=resident)
-            await message.author.add_roles(role) # 上記で取得したロールを付与
+            role_id = 738998001976082503
+            await message.author.add_roles(role_id) # 上記で取得したロールを付与
         else:#あるいは、もし神社チャンネルでないなら
             await message.channel.send("ここではコマンドは実施できません") 
 
