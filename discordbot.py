@@ -85,14 +85,14 @@ ID_ROLE_WELCOME = 738998001976082503 # 付けたい役職のID
 @bot.event
 async def on_raw_reaction_add(payload):
     # channel_id から Channel オブジェクトを取得
-    channel = client.get_channel(payload.channel_id)
+    channel = bot.get_channel(payload.channel_id)
 
     # 該当のチャンネル以外はスルー
     if channel.id != ID_CHANNEL_README:
         return
 
     # guild_id から Guild オブジェクトを取得
-    guild = client.get_guild(payload.guild_id)
+    guild = bot.get_guild(payload.guild_id)
 
     # user_id から Member オブジェクトを取得
     member = guild.get_member(payload.user_id)
