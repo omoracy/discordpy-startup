@@ -50,38 +50,38 @@ async def on_member_join(member):
 
 #ID_ROLE_WELCOME = 738998001976082503 # 付けたい役職のID
 
-@bot.event
-async def on_message(message):
-    if re.search("こんにちは", message.content): #もし、こんにちはを含むメッセージで、
+#@bot.event
+#async def on_message(message):
+#    if re.search("こんにちは", message.content): #もし、こんにちはを含むメッセージで、
 
 
     # channel_id から Channel オブジェクトを取得
 #    channel = bot.get_channel(message.channel_id)
 
-    await message.channel.send("元気")
+#    await message.channel.send("元気")
 
     # guild_id から Guild オブジェクトを取得
 #    guild = bot.get_guild(message.guild_id)
 
-    await message.channel.send("4")
+#    await message.channel.send("4")
 
     # user_id から Member オブジェクトを取得
 #    member = guild.get_member(message.user_id)
 
-    await message.channel.send("5")
+#    await message.channel.send("5")
 
     # 用意した役職IDから Role オブジェクトを取得
 #    role = guild.get_role(ID_ROLE_WELCOME)
 
-    await message.channel.send("6")
+#    await message.channel.send("6")
 
     # リアクションを付けたメンバーに役職を付与
 #    await member.add_roles(role)
 
 
-    await message.channel.send("7")
+#    await message.channel.send("7")
 
     # 分かりやすいように歓迎のメッセージを送る
-    await channel.send('いらっしゃいませ！')
+#    await channel.send('いらっしゃいませ！')
 
 bot.run(token)
