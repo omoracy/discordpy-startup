@@ -55,7 +55,7 @@ async def on_message(message):
     if message.content == 'こんにちは': #もし、こんにちはを含むメッセージで、
         if message.channel.id == 746579828693794926:#かつ、もし、神社チャンネルなら
     # channel_id から Channel オブジェクトを取得
-#        channel = bot.get_channel(message.channel.id)
+        channel = bot.get_channel(message.channel_id)
 #                guild = message.guild
 
             await message.channel.send("一つ")
