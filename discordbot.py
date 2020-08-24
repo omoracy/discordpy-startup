@@ -7,8 +7,6 @@ bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
 
 
-ID_ROLE_RESIDENT = 738998001976082503 # 付けたい役職のID
-
 # コマンドに対応するリストデータを取得する関数を定義
 async def get_data(message):
     command = message.content
@@ -51,9 +49,7 @@ async def on_member_join(member):
 @bot.event
 async def on_message(message):
     guild = message.guild
-    member = guild.get_member(message)
-    role = guild.get_role(ID_ROLE_RESIDENT)
-    member_count = guild.member_count
+    role = discord.utils.get(guild.roles, name="resident")
 
     # メッセージ送信者がBotだった場合は無視する
     if message.author.bot:
@@ -73,9 +69,7 @@ async def on_message(message):
         await message.channel.send('わんわん')
 
     if re.search("こんにちは", message.content): #もし、こんにちはを含むメッセージで、
-
-                # ユーザとBOTを区別しない場合
-    await message.channel.send(member_count)
+        await member.add_roles(role)
 
 
         else:#あるいは、もし神社チャンネルでないなら
