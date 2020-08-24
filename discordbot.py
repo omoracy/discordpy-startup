@@ -1,6 +1,4 @@
 from discord.ext import commands
-from discord.ext.commands import Bot
-from discord.ext import tasks, commands
 import os
 import traceback
 import re
