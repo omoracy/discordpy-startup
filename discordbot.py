@@ -52,7 +52,7 @@ async def on_member_join(member):
 
 @bot.event
 async def on_message(message):
-    if re.search("こんにちは", message.content): #もし、こんにちはを含むメッセージで、
+    if message.content == 'こんにちは': #もし、こんにちはを含むメッセージで、
         if message.channel.id == 746579828693794926:#かつ、もし、神社チャンネルなら
     # channel_id から Channel オブジェクトを取得
         channel = bot.get_channel(message.channel.id)
