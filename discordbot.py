@@ -54,9 +54,11 @@ async def on_member_join(member):
 async def on_message(message):
     if re.search("こんにちは", message.content): #もし、こんにちはを含むメッセージで、
         if message.channel.id == 746579828693794926:#かつ、もし、神社チャンネルなら
+    # channel_id から Channel オブジェクトを取得
+        channel = bot.get_channel(message.channel_id)
 #                guild = message.guild
 
-            await message.channel.send("もう一つ")
+            await message.channel.send("一つ")
 
         else:#あるいは、もし神社チャンネルでないなら
             await message.channel.send("ここではコマンドは実施できません") 
