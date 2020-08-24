@@ -45,6 +45,11 @@ async def on_member_join(member):
     channel3 = bot.get_channel(CHANNEL_ID3)
     await channel1.send(str(member.mention)+'さん！好奇心王国へようこそ！\n好奇心AIの「ロロたん」です。\nここにたどり着いたということは、きっとあなたは好奇心の旺盛な方ですね！\n\n好奇心王国は、一人ひとりの好奇心から生まれる活動を通して個性が混じり合う場所です。\nメインとなる活動は「テクノロジーを使ったくだらないアイデアの実装」です。\n\nOPENエリア(観光エリア)でも楽しめることはあると思いますが、より能動的に何か活動に参加したい方は、是非レジデンス(居住区)まで辿り着いてください。\n\nまずは「<#745860737062273045>」と「<#738358135470817290>」のご確認を。\nワクワクする活動と交流を楽しむロロ〜！')
 
+@bot.event
+async def on_message(message):
+    if message.content == 'こんにちは': #もし、こんにちはを含むメッセージで、
+        if message.channel.id == 746579828693794926:#かつ、もし、神社チャンネルなら
+        await message.channel.send("一つ")
 
 
 bot.run(token)
