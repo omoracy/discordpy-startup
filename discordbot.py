@@ -52,6 +52,7 @@ ID_ROLE_WELCOME = 738998001976082503 # 付けたい役職のID
 
 @bot.event
 async def on_message(message):
+    if re.search("こんにちは", message.content): #もし、こんにちはを含むメッセージで、
     if message.channel_id != 746579828693794926:
         return
 
