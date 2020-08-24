@@ -56,27 +56,27 @@ async def on_message(message):
 
 
     # channel_id から Channel オブジェクトを取得
-    channel = bot.get_channel(message.channel_id)
+#    channel = bot.get_channel(message.channel_id)
 
     await channel.send("元気")
 
     # guild_id から Guild オブジェクトを取得
-    guild = bot.get_guild(message.guild_id)
+#    guild = bot.get_guild(message.guild_id)
 
     await channel.send("4")
 
     # user_id から Member オブジェクトを取得
-    member = guild.get_member(message.user_id)
+#    member = guild.get_member(message.user_id)
 
     await channel.send("5")
 
     # 用意した役職IDから Role オブジェクトを取得
-    role = guild.get_role(ID_ROLE_WELCOME)
+#    role = guild.get_role(ID_ROLE_WELCOME)
 
     await channel.send("6")
 
     # リアクションを付けたメンバーに役職を付与
-    await member.add_roles(role)
+#    await member.add_roles(role)
 
 
     await channel.send("7")
