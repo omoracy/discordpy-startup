@@ -69,7 +69,7 @@ async def on_message(message):
         await message.channel.send('わんわん')
 
     if re.search("こんにちは", message.content): #もし、こんにちはを含むメッセージで、
-        await message.author.add_roles(role)
+        await message.channel.send("呪文") 
 
 
         else:#あるいは、もし神社チャンネルでないなら
