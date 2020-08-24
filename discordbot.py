@@ -55,6 +55,7 @@ async def on_message(message):
     if message.content == 'こんにちは': #もし、こんにちはを含むメッセージで、
         if message.channel.id == 746579828693794926:#かつ、もし、神社チャンネルなら
     # channel_id から Channel オブジェクトを取得
+    await client.wait_until_ready()
     channel = bot.get_channel(745875403482071085)
 #                guild = message.guild
 
