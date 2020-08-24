@@ -49,7 +49,7 @@ async def on_member_join(member):
 @bot.event
 async def on_message(message):
     guild = message.guild
-#    role = guild.get_role(738998001976082503)
+    role = guild.get_role(738998001976082503)
 
     # メッセージ送信者がBotだった場合は無視する
     if message.author.bot:
@@ -69,8 +69,8 @@ async def on_message(message):
         await message.channel.send('わんわん')
 
     if re.search("こんにちは", message.content): #もし、こんにちはを含むメッセージで、
-        await message.channel.send("呪文") 
-
+        if message.channel.id == 746579828693794926:#かつ、もし、神社チャンネルなら
+            await message.channel.send("呪文") 
 
         else:#あるいは、もし神社チャンネルでないなら
             await message.channel.send("ここではコマンドは実施できません") 
