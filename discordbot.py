@@ -73,7 +73,17 @@ async def on_message(message):
     if re.search("こんにちは", message.content): #もし、こんにちはを含むメッセージで、
         if message.channel.id == 746579828693794926:#かつ、もし、神社チャンネルなら
             await message.channel.send("呪文") 
-            await me.add_roles(role)
+                # ユーザとBOTを区別しない場合
+    member_count = guild.member_count
+    await message.channel.send(f'メンバー数：{member_count}')
+
+    # ユーザのみ
+    user_count = sum(1 for member in guild.members if not member.bot)
+    await message.channel.send(f'ユーザ数：{user_count}')
+
+    # BOTのみ
+    bot_count = sum(1 for member in guild.members if member.bot)
+    await message.channel.send(f'BOT数：{bot_count}')
 
         else:#あるいは、もし神社チャンネルでないなら
             await message.channel.send("ここではコマンドは実施できません") 
