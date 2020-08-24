@@ -7,6 +7,8 @@ bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
 
 
+ID_ROLE_RESIDENT = 738998001976082503 # 付けたい役職のID
+
 # コマンドに対応するリストデータを取得する関数を定義
 async def get_data(message):
     command = message.content
@@ -50,6 +52,7 @@ async def on_member_join(member):
 async def on_message(message):
     guild = message.guild
     member = guild.get_member(message)
+    role = guild.get_role(ID_ROLE_RESIDENT)
     # メッセージ送信者がBotだった場合は無視する
     if message.author.bot:
         return
