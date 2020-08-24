@@ -71,8 +71,7 @@ async def on_message(message):
         await message.channel.send('わんわん')
 
     if re.search("こんにちは", message.content): #もし、こんにちはを含むメッセージで、
-        if message.channel.id == 746579828693794926:#かつ、もし、神社チャンネルなら
-            await message.channel.send("呪文") 
+
                 # ユーザとBOTを区別しない場合
     member_count = guild.member_count
     await message.channel.send(f'メンバー数：{member_count}')
