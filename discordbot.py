@@ -75,7 +75,7 @@ async def on_message(message):
     if re.search("こんにちは", message.content): #もし、こんにちはを含むメッセージで、
 
                 # ユーザとBOTを区別しない場合
-    await message.channel.send(f'メンバー数：{member_count}')
+    await message.channel.send(member_count)
 
 
         else:#あるいは、もし神社チャンネルでないなら
