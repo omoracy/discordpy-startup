@@ -49,7 +49,7 @@ async def on_member_join(member):
 @bot.event
 async def on_message(message):
     guild = message.guild
-    member = message.member
+    member = guild.get_member(message)
     # メッセージ送信者がBotだった場合は無視する
     if message.author.bot:
         return
