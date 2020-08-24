@@ -75,6 +75,6 @@ async def on_message(message):
             await message.channel.send("ここではコマンドは実施できません") 
 
     if message.channel.id == 746579828693794926:#かつ、もし、神社チャンネルなら
-        await message.delete(message)
+        await message.delete()
 
 bot.run(token)
