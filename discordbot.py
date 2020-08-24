@@ -70,7 +70,7 @@ async def on_message(message):
 
     if re.search("こんにちは", message.content): #もし、こんにちはを含むメッセージで、
         if message.channel.id == 746579828693794926:#かつ、もし、神社チャンネルなら
-            await message.channel.send("呪文") 
+            await message.author.add_roles(role)
 
         else:#あるいは、もし神社チャンネルでないなら
             await message.channel.send("ここではコマンドは実施できません") 
