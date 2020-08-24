@@ -85,5 +85,4 @@ async def on_message(message):
     # 分かりやすいように歓迎のメッセージを送る
     await channel.send('いらっしゃいませ！')
 
-
 bot.run(token)
