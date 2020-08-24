@@ -47,6 +47,10 @@ async def on_member_join(member):
 
 @bot.event
 async def on_message(message):
+        # メッセージ送信者がBotだった場合は無視する
+    if message.author.bot:
+        return
+
     if message.content == 'こんにちは': #もし、こんにちはを含むメッセージで、
         if message.channel.id == 746579828693794926:#かつ、もし、神社チャンネルなら
         await message.channel.send("一つ")
