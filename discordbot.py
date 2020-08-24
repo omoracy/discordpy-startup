@@ -48,6 +48,8 @@ async def on_member_join(member):
 # メッセージ受信時に動作する処理
 @bot.event
 async def on_message(message):
+    guild = message.guild
+    member = guild.get_member(message)
     # メッセージ送信者がBotだった場合は無視する
     if message.author.bot:
         return
@@ -68,7 +70,6 @@ async def on_message(message):
     if re.search("こんにちは", message.content): #もし、こんにちはを含むメッセージで、
         if message.channel.id == 746579828693794926:#かつ、もし、神社チャンネルなら
             await message.channel.send("呪文") 
-            member = bot.get_member(message.author)
             await message.channel.send(str(member.mention)+'さん')
 
         else:#あるいは、もし神社チャンネルでないなら
