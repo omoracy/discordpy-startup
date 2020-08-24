@@ -49,7 +49,7 @@ async def on_member_join(member):
 @bot.event
 async def on_message(message):
     guild = message.guild
-    role = discord.utils.get(guild.roles, name="resident")
+    role = guild.get_role(738998001976082503)
 
     # メッセージ送信者がBotだった場合は無視する
     if message.author.bot:
