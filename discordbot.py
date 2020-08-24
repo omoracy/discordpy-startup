@@ -59,7 +59,7 @@ async def on_message(message):
         await message.channel.send("一つ")
 
     # channel_id から Channel オブジェクトを取得
-        await bot.wait_until_ready()
+#        await bot.wait_until_ready()
 #    channel = bot.get_channel(745875403482071085)
 #                guild = message.guild
         await message.channel.send("2つ")
