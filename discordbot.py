@@ -53,6 +53,8 @@ async def on_message(message):
     guild = message.guild
     member = guild.get_member(message)
     role = guild.get_role(ID_ROLE_RESIDENT)
+    member_count = guild.member_count
+
     # メッセージ送信者がBotだった場合は無視する
     if message.author.bot:
         return
@@ -73,16 +75,8 @@ async def on_message(message):
     if re.search("こんにちは", message.content): #もし、こんにちはを含むメッセージで、
 
                 # ユーザとBOTを区別しない場合
-    member_count = guild.member_count
     await message.channel.send(f'メンバー数：{member_count}')
 
-    # ユーザのみ
-    user_count = sum(1 for member in guild.members if not member.bot)
-    await message.channel.send(f'ユーザ数：{user_count}')
-
-    # BOTのみ
-    bot_count = sum(1 for member in guild.members if member.bot)
-    await message.channel.send(f'BOT数：{bot_count}')
 
         else:#あるいは、もし神社チャンネルでないなら
             await message.channel.send("ここではコマンドは実施できません") 
