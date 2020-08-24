@@ -55,7 +55,7 @@ async def on_message(message):
     if re.search("こんにちは", message.content): #もし、こんにちはを含むメッセージで、
         if message.channel.id == 746579828693794926:#かつ、もし、神社チャンネルなら
             await message.channel.send("呪文") 
-                guild = bot.get_guild(guild_id)
+                guild = bot.get_guild(channel.guild_id)
 
             await message.channel.send("もう一つ")
 
