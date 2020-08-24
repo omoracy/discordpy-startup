@@ -48,7 +48,7 @@ async def on_member_join(member):
 
 
 
-ID_ROLE_WELCOME = 738998001976082503 # 付けたい役職のID
+#ID_ROLE_WELCOME = 738998001976082503 # 付けたい役職のID
 
 @bot.event
 async def on_message(message):
