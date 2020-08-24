@@ -68,12 +68,12 @@ async def on_message(message):
     if re.search("好奇心王国の未来像を教えて", message.content):
         await message.channel.send('わんわん')
 
-    if re.search("こんにちは", message.content): #もし、こんにちはを含むメッセージで、
-        await message.author.add_roles(role)
+#    if re.search("こんにちは", message.content): #もし、こんにちはを含むメッセージで、
+#        await message.author.add_roles(role)
 
 
-        else:#あるいは、もし神社チャンネルでないなら
-            await message.channel.send("ここではコマンドは実施できません") 
+#        else:#あるいは、もし神社チャンネルでないなら
+#            await message.channel.send("ここではコマンドは実施できません") 
 
 
 bot.run(token)
